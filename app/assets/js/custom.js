@@ -51,7 +51,7 @@
 	    nextArrow:'<button class="NextArrow"></button>', 
 	  });
 
-	$('.search-icon a').on("click", function(event) {
+	 $('.search-icon a').on("click", function(event) {
 	    event.preventDefault();
 	    $("#search").addClass("open");
 	    $('#search > form > input[type="search"]').focus();

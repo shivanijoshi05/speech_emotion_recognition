@@ -39,7 +39,11 @@ figure, header, nav, section, article, aside, footer, figcaption {
   border: 0;
   outline: 0;
 }
-
+.stop-scrolling{
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 .clearfix:after {
   content: ".";
   display: block;
@@ -141,29 +145,17 @@ body {
   }
 }
 
-.main-white-button a {
+.main-white-button button {
   font-size: 13px;
   color: #219F94;
   background-color: #fff;
   padding: 12px 25px;
   display: inline-block;
-  border-radius: 3px;
   font-weight: 600;
   transition: all .3s;
 }
 
-.main-white-button a:hover {
-  opacity: 0.9;
-}
-
-.main-text-button a {
-  font-size: 13px;
-  color: #fff;
-  font-weight: 600;
-  transition: all .3s;
-}
-
-.main-text-button a:hover {
+.main-white-button button:hover {
   opacity: 0.9;
 }
 
@@ -175,17 +167,6 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
-/*
-.section-heading h6:before {
-  width: 30px;
-  height: 1px;
-  content: '';
-  position:absolute;
-  top: 8px;
-  background-color: #219F94;
-}
-*/
 
 .section-heading h2 {
   line-height: 40px;
@@ -204,14 +185,13 @@ header
 
 .background-header {
   background-color: rgb(255, 255, 255); /* background color when scrolled */
-  height: 80px!important;
+  height: 100px!important;
   position: fixed!important;
   top: 0px;
   left: 0px;
   right: 0px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15)!important; /* x-offset, y-offset, blurr */
 }
-
 .background-header .logo,
 .background-header .main-nav .nav li a {
   color: #2a2a2a!important; /* menu color*/
@@ -238,7 +218,7 @@ header
 }
 
 .header-area .main-nav {
-  min-height: 80px;
+  min-height: 100px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -254,11 +234,11 @@ header
 }
 
 .background-header .main-nav .logo {
-  line-height: 75px;
+  line-height: 100px;
 }
 
 .background-header .nav {
-  margin-top: 20px !important;
+  margin-top: 30px !important;
 }
 
 .header-area .main-nav .nav {
@@ -573,7 +553,7 @@ banner
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 95%;
+  height: 100%;
 }
 
 #top .left-content .inner-content {
@@ -752,8 +732,46 @@ ul.slick-dots {
 .slick-initialized .slick-slide{display:block}
 .slick-loading .slick-slide{visibility:hidden}
 .slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}
-
-
+/*
+---------------------------------------------
+pop up
+---------------------------------------------
+*/
+.popup{
+  top: 40%;
+  left: 40%;
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  padding: 20px, 20px;
+  background: #FFF;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  visibility: hidden;
+  
+}
+.popup input{
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.popup .align-right-btn{
+  text-align: right;
+  margin-right: 20px;
+}
+.align-right-btn button{
+  margin-top: 50px;
+  margin-right: 10px;
+  margin-left: 20px;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.align-right-btn button:hover{
+  background-color: #219F94;
+  color: #fff;
+}
 /*
 ---------------------------------------------
 about
@@ -1028,13 +1046,13 @@ footer
 
 footer {
   padding: 50px 0px;
-  background-color: #219F94;
+  background-color: #ffffff;
 }
 
 footer .right-text-content p {
-  margin-top: 5px;
-  color: #fff;
-  font-size: 14px;
+  margin-top: 8px;
+  color: #2a2a2a;
+  font-size: 15px;
   text-align: right;
 }
 
@@ -1079,12 +1097,14 @@ responsive
     margin-left: 0px;
     margin-top: 30px;
   }
-  footer .right-text-content {
+  footer .logo,
+  footer .right-text-content p {
     text-align: center;
-    margin-bottom: 30px;
+    align-self: center;
+    margin-bottom: 5px;
   }
-  /*
-  footer .left-text-content p {
+  
+  /*footer .left-text-content p {
     text-align: center;
     margin-top: 30px;
   }*/
