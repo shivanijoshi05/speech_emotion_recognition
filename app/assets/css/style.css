@@ -566,7 +566,7 @@ banner
   vertical-align: auto;
 }
 
-#top .left-content h4 {
+.app-name {
   font-family: 'Dancing Script', cursive;
   color: #fff;
   font-size: 50px;
@@ -772,6 +772,76 @@ pop up
   background-color: #219F94;
   color: #fff;
 }
+
+/*
+---------------------------------------------
+Output
+---------------------------------------------
+*/
+.audio-input{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  text-align: center;
+  align-self: center;
+  vertical-align: auto;
+  visibility: hidden;
+}
+.audio-input p{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: medium;
+  text-align: center;
+  color: #fff;
+}
+.audio-input h6{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+.testbtn{
+  font-size: 13px;
+  color: #219F94;
+  background-color: #fff;
+  padding: 12px 25px;
+  display: inline-block;
+  font-weight: 600;
+  transition: all .3s;
+  margin-top: 20px;
+}
+.testbtn:hover {
+  opacity: 0.9;
+}
+
+/*
+---------------------------------------------
+output
+---------------------------------------------
+*/
+
+.output{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  text-align: center;
+  align-self: center;
+  vertical-align: auto;
+  visibility: hidden;
+}
+.output img{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.left-content .output h6{
+  font-size: 50px;
+  font-weight: 600;
+}
+
 /*
 ---------------------------------------------
 about
@@ -1082,6 +1152,10 @@ responsive
   #top .left-content {
     text-align: center;
     padding: 25% 0px;
+  }
+  .popup{
+    top: 30%;
+    left: 16%;
   }
   #about .right-content {
     margin-left: 0px;

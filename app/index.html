@@ -21,7 +21,7 @@ Speech Emotion Recognition
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="assets/css/ser_index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
@@ -78,11 +78,25 @@ Speech Emotion Recognition
                 <div class="col-lg-4">
                     <div class="left-content">
                         <div class="inner-content">
-                            <h4>Speech Emotion Recognition</h4>
+                            <h4 class="app-name">Speech Emotion Recognition</h4>
                             <h6>TEST YOUR SPEECH</h6>
                             <div class="main-white-button scroll-to-section">
                                 <button name="main-upload-btn" onclick="openPopUp()">Upload audio file</button>
                             </div>
+                        </div>
+                        <div class = "audio-input">
+                            <h4 class="app-name">Speech Emotion Recognition</h4>
+                            <p>Your Audio :</p>
+                            <audio controls>
+                            <source src="demo.wav" type="audio/wav">
+                            <source src="demo.mp3" type="audio/mpeg">
+                            </audio>
+                            <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
+                        </div>
+                        <div class="output">
+                            <h4 class="app-name">Speech Emotion Recognition</h4>
+                            <img src="assets/images/happy.png">
+                            <h6>Happy</h6>
                         </div>
                     </div>
                 </div>
@@ -226,7 +240,7 @@ Speech Emotion Recognition
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
-                            <img src="assets/images/khushbu2.jpg" alt="Team #4">
+                            <img src="assets/images/khushbu.jpg" alt="Team #4">
                         </div>
                         <div class="down-content">
                             <h4>Khushbu Modi</h4>
@@ -345,6 +359,14 @@ Speech Emotion Recognition
             document.getElementsByTagName('header')[0].style.opacity = '1.0'
             document.getElementsByClassName('img-slider')[0].style.opacity = '1.0'
             document.getElementsByClassName('popup')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('audio-input')[0].style.visibility = 'visible'
+            document.getElementsByClassName('inner-content')[0].style.visibility = 'hidden'
+        }
+        function displayOutput(){
+            document.getElementsByClassName('popup')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('audio-input')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('inner-content')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('output')[0].style.visibility = 'visible'
         }
 
     </script>
