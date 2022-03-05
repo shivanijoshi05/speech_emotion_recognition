@@ -884,15 +884,15 @@ about
 }
 
 #about .right-content {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 #about .right-content .thumb {
   position: relative;
 }
 #about .right-content .thumb img {
-  height: 500px;
-  width: 500px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /*
@@ -1145,8 +1145,12 @@ responsive
     left: 16%;
   }
   #about .right-content {
-    margin-left: 0px;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  #about .right-content .thumb img {
+    align-items: center;
+    padding: 20% 0px;
   }
   #team .team-item {
     margin-bottom: 30px;
