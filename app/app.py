@@ -1,19 +1,22 @@
+from asyncio.log import logger
 from flask import Flask, render_template, request, redirect
 import librosa
 import librosa.display
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-import cv2
+import cv2, os
+# from scipy.io.wavfile import write
+import scipy
 app = Flask(__name__)
-<<<<<<< HEAD
+
 @app.route('/')
 @app.route('/home')
-=======
+
 
 @app.route('/',methods = ["GET","POST"])
 @app.route('/home', methods = ["GET","POST"])
->>>>>>> 0cc2148fdafa804d2a51a6d9afea1560177e73a5
+
 def load_page():
     emotion = ""
     if request.method == "POST":
@@ -32,7 +35,7 @@ def load_page():
 
 def predict_emotion(input_audio):
      input=[]
-     emotions = {0: 'angry', 1: 'calm', 2: 'disgust', 3: 'fearful', 4: 'happy', 5: 'neutral', 6: 'sad', 7: 'surprised'}
+     emotions = {0: 'neutral', 1: 'calm', 2: 'happy', 3: 'sad', 4: 'angry', 5: 'fearful', 6: 'disgust', 7: 'surprised'}
      y, sr = librosa.load(input_audio)
      yt,_ = librosa.effects.trim(y)
      y = yt
@@ -46,7 +49,7 @@ def predict_emotion(input_audio):
      #image = image/255
      #input.append(image)
      new_model = tf.keras.models.load_model('static/models/vgg16_model.h5')
-     result = new_model.predict(input)
+     result = new_model.predict(image)
      y_pred = np.argmax(result,axis=1)
      emotion = emotions[y_pred]
      return emotion
