@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import cv2, os
+import speech_recognition as sr
 # from scipy.io.wavfile import write
 import scipy
 app = Flask(__name__)
@@ -19,6 +20,7 @@ app = Flask(__name__)
 
 def load_page():
     emotion = ""
+    data = request.files["file"]
     if request.method == "POST":
 
         if "file" not in request.files:
@@ -29,9 +31,12 @@ def load_page():
             return redirect(request.url)
 
         if file:
-            emotion = predict_emotion(file)
+            recognizer = sr.Recognizer()
+            audioFile = sr.AudioFile()
+            data = recognizer.record(audioFile)
+            emotion = predict_emotion(data)
     print(emotion)
-    return render_template('index.html')
+    return render_template('index.html', data = file)
 
 def predict_emotion(input_audio):
      input=[]
