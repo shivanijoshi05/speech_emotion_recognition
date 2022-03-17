@@ -88,8 +88,13 @@ Speech Emotion Recognition
                             <h4 class="app-name">Speech Emotion Recognition</h4>
                             <p>Your Audio :</p>
                             <audio controls>
+<<<<<<< HEAD
                             <source src="{{data}}" type="audio/wav">
                             <source src="{{data}}" type="audio/mpeg">
+=======
+                            <source src="static/demo.wav" type="audio/wav">
+                            <source src="static/demo.wav" type="audio/mpeg">
+>>>>>>> 9f48dd1bd2d23ce048873bbf207d995a9c581cd5
                             </audio>
                             <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
                         </div>
@@ -140,12 +145,14 @@ Speech Emotion Recognition
     <!-- ***** Main Banner Area End ***** -->
 
     <div class="popup">
-        <input id="input-b3" name="input-b3[]" type="file" class="file" multiple 
-         data-show-upload="false" data-show-caption="true" data-msg-placeholder="Select {files} for upload...">
-         <div class = "align-right-btn">
-            <button name="cancel" onclick="closePopUp()">Cancel</button>
-            <button name="upload" onclick="uploadAudio()">Upload</button>
-         </div>
+        <form action="" method="post" enctype="multipart/form-data" >
+            <input  type="file" name="file"></input>
+            <div class = "align-right-btn">
+                <input name="cancel" onclick="closePopUp()" type = 'submit' value = 'Cancel'></input>
+                <input name="upload" onclick="uploadAudio()" type = 'submit' value = 'Upload'></input>
+            </div>
+        </form>
+        
          
     </div>
 
