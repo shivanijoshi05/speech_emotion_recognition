@@ -13,7 +13,6 @@ from keras.preprocessing.image import img_to_array
 
 app = Flask(__name__)
 
-
 @app.route('/',methods = ["GET","POST"])
 @app.route('/home', methods = ["GET","POST"])
 
