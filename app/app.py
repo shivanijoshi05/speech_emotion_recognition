@@ -5,25 +5,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import cv2, os
-<<<<<<< HEAD
 import speech_recognition as sr
 # from scipy.io.wavfile import write
 import scipy
-app = Flask(__name__)
-
-@app.route('/')
-@app.route('/home')
-
-=======
->>>>>>> 9f48dd1bd2d23ce048873bbf207d995a9c581cd5
-
 app = Flask(__name__)
 @app.route('/',methods = ["GET","POST"])
 @app.route('/home', methods = ["GET","POST"])
 
 def load_page():
     emotion = ""
-    data = request.files["file"]
+    input_audio = ""
     if request.method == "POST":
         if "file" not in request.files:
             return redirect(request.url)
@@ -31,18 +22,10 @@ def load_page():
         if file.filename == "":
             return redirect(request.url)
         if file:
-<<<<<<< HEAD
-            recognizer = sr.Recognizer()
-            audioFile = sr.AudioFile()
-            data = recognizer.record(audioFile)
-            emotion = predict_emotion(data)
-=======
-            audioFile = 'app/static/demo.wav'
-            file.save(audioFile)
-            emotion = predict_emotion(audioFile) 
->>>>>>> 9f48dd1bd2d23ce048873bbf207d995a9c581cd5
-    print(emotion)
-    return render_template('index.html', data = file)
+            input_audio = 'app/static/demo.wav'
+            file.save(input_audio)
+            emotion = predict_emotion(input_audio) 
+    return render_template('index.html', input_audio = input_audio, emotion = emotion)
 
 def predict_emotion(input_audio):
      input = []
@@ -57,8 +40,8 @@ def predict_emotion(input_audio):
      plt.savefig(path)
      #image = cv2.imread("app/static/images/image.jpeg")
      #image = cv2.resize(image,(224,224))     # resize image to match model's expected sizing
-     image=tf.keras.preprocessing.image.load_img(path, color_mode='rgb', target_size= (224,224))
-     image /= 255
+     image = tf.keras.preprocessing.image.load_img(path, color_mode='rgb', target_size= (224,224))
+     # image /= 255
      new_model = tf.keras.models.load_model('app/static/models/vgg16_model.h5')
      result = new_model.predict(image)
      y_pred = np.argmax(result,axis=1)
