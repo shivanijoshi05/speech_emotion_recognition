@@ -4,16 +4,13 @@ import librosa.display
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-<<<<<<< HEAD
 import cv2, os
 import speech_recognition as sr
 # from scipy.io.wavfile import write
 import scipy
-=======
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 
->>>>>>> dd2c40e98d48dcdc4282fbf36ef692abeaf0589c
 app = Flask(__name__)
 
 
@@ -22,11 +19,8 @@ app = Flask(__name__)
 
 def load_page():
     emotion = ""
-<<<<<<< HEAD
     input_audio = ""
-=======
     audioFile = ""
->>>>>>> dd2c40e98d48dcdc4282fbf36ef692abeaf0589c
     if request.method == "POST":
         if "file" not in request.files:
             return redirect(request.url)
@@ -34,19 +28,16 @@ def load_page():
         if file.filename == "":
             return redirect(request.url)
         if file:
-<<<<<<< HEAD
             input_audio = 'app/static/demo.wav'
             file.save(input_audio)
             emotion = predict_emotion(input_audio) 
     return render_template('index.html', input_audio = input_audio, emotion = emotion)
-=======
             audioFile = 'app/static/demo.wav'
             print(audioFile)
             file.save(audioFile)
             emotion = predict_emotion(audioFile) 
             print(emotion)
     return render_template('index.html', emotion=emotion)
->>>>>>> dd2c40e98d48dcdc4282fbf36ef692abeaf0589c
 
 def predict_emotion(input_audio):
      path = "app/static/images/image.jpeg"
@@ -58,14 +49,11 @@ def predict_emotion(input_audio):
      spectrogram = librosa.power_to_db(spectrogram,ref=np.max)
      librosa.display.specshow(spectrogram, y_axis='mel', fmax=20000, x_axis='time')
      plt.savefig(path)
-<<<<<<< HEAD
      #image = cv2.imread("app/static/images/image.jpeg")
      #image = cv2.resize(image,(224,224))     # resize image to match model's expected sizing
      image = tf.keras.preprocessing.image.load_img(path, color_mode='rgb', target_size= (224,224))
      # image /= 255
-=======
      image = load_image(path)
->>>>>>> dd2c40e98d48dcdc4282fbf36ef692abeaf0589c
      new_model = tf.keras.models.load_model('app/static/models/vgg16_model.h5')
      result = new_model.predict(image)
      y_pred = int(np.argmax(result, axis=1))
