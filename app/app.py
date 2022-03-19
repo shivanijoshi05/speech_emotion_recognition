@@ -38,12 +38,13 @@ def predict_emotion(input_audio):
      plt.savefig(path)
      #image = cv2.imread("app/static/images/image.jpeg")
      #image = cv2.resize(image,(224,224))     # resize image to match model's expected sizing
-     image=tf.keras.preprocessing.image.load_img(path, color_mode='rgb', target_size= (224,224))
-     image /= 255
-     new_model = tf.keras.models.load_model('app/static/models/vgg16_model.h5')
-     result = new_model.predict(image)
-     y_pred = np.argmax(result,axis=1)
-     emotion = emotions[y_pred]
+     #image=tf.keras.preprocessing.image.load_img(path, color_mode='rgb', target_size= (224,224))
+     #image /= 255
+     #new_model = tf.keras.models.load_model('app/static/models/vgg16_model.h5')
+     #result = new_model.predict(image)
+     #y_pred = np.argmax(result,axis=1)
+     #emotion = emotions[y_pred]
+     emotion = "HAPPY"
      return emotion
 
 if __name__ == '__main__':
