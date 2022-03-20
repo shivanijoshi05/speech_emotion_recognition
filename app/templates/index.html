@@ -14,7 +14,6 @@
 <!--
     
 Speech Emotion Recognition
-
 -->
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
@@ -80,22 +79,6 @@ Speech Emotion Recognition
                         <div class="inner-content">
                             <h4 class="app-name">Speech Emotion Recognition</h4>
                             <h6>TEST YOUR SPEECH</h6>
-<<<<<<< HEAD
-                            <div class="main-white-button scroll-to-section">
-                                <button name="main-upload-btn" onclick="openPopUp()">Upload audio file</button>
-                            </div>
-                        </div>
-                        <div class = "audio-input">
-                            <h4 class="app-name">Speech Emotion Recognition</h4>
-                            <p>Your Audio :</p>
-                            <audio controls>
-                            <source src="{{data}}" type="audio/wav">
-                            <source src="{{data}}" type="audio/mpeg">
-                            <source src="app/static/demo.wav" type="audio/wav">
-                            <source src="app/static/demo.wav" type="audio/mpeg">
-                            </audio>
-                            <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
-=======
                             <img src = "static/images/{{emotion}}.gif"  class ="emotion-img">
                             <h4 class="app-name"> {{emotion}}</h4>
                             {% if emotion == "" %}
@@ -113,7 +96,6 @@ Speech Emotion Recognition
                                     <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
                                 </div>
                             {% endif %}
->>>>>>> dd2c40e98d48dcdc4282fbf36ef692abeaf0589c
                         </div>
                         
                         {% if emotion != ""  %}
