@@ -758,7 +758,7 @@ pop up
   left: 40%;
   position: absolute;
   width: 400px;
-  height: 50px;
+  height: 200px;
   padding: 20px, 20px;
   background: #FFF;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
@@ -807,7 +807,7 @@ Output
  .audio-input p{
   margin-top: 20px;
   margin-bottom: 30px;
-  font-size: medium;
+  font-size: 30px;
   text-align: center;
   color: #fff;
 }
@@ -847,10 +847,12 @@ output
   text-align: center;
   align-self: center;
   vertical-align: auto;
+  visibility: hidden;
 }
 .output img{
   margin-top: 30px;
   margin-bottom: 30px;
+  
 }
 .left-content .output h1{
   font-size: 40px;
