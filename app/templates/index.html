@@ -76,32 +76,31 @@ Speech Emotion Recognition
             <div class="row">
                 <div class="col-lg-4">
                     <div class="left-content">
-                        <div class="inner-content">
-                            <h4 class="app-name">Speech Emotion Recognition</h4>
-                            <h6>TEST YOUR SPEECH</h6>
-                            <img src = "static/images/{{emotion}}.gif"  class ="emotion-img">
-                            <h4 class="app-name"> {{emotion}}</h4>
+                        <div class="inner-content">                            
                             {% if emotion == "" %}
+                                <h4 class="app-name">Speech Emotion Recognition</h4>
+                                <h6>TEST YOUR SPEECH</h6>
                                 <div class="main-white-button scroll-to-section">
                                     <button name="main-upload-btn" onclick="openPopUp()">Upload audio file</button>
                                 </div>
                             {% else %}
                                 <div class = "audio-input">
-                                    <h6 class="app-name">Speech Emotion Recognition</h6>
+                                    <h5 class="app-name">Speech Emotion Recognition</h5>
                                     <p>Your Audio :</p>
                                     <audio controls>
-                                    <source src = "app/static/demo.wav" type="audio/wav">
-                                    <source src = "app/static/demo.wav" type="audio/mpeg">
+                                    <source src = "static/demo.wav" type="audio/wav">
+                                    <source src = "static/demo.wav" type="audio/mpeg">
                                     </audio>
                                     <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
                                 </div>
                             {% endif %}
                         </div>
                         
-                        {% if emotion != ""  %}
+                       {% if emotion != "" %}
                         <div class="output">
-                            <h4 class="app-name">Speech Emotion Recognition</h4>
-                            <img src="static/images/happy.png">
+                            <!--<h4 class="app-name">Speech Emotion Recognition</h4>-->
+                            <!--<img src="static/images/happy.png">-->
+                            <img src = "static/images/{{emotion}}.gif"  class ="emotion-img">
                             <h1>{{emotion}}</h1>
                         </div>
                         {% endif %}
@@ -362,6 +361,7 @@ Speech Emotion Recognition
             document.getElementsByTagName('header')[0].style.opacity = '1.0'
             document.getElementsByClassName('img-slider')[0].style.opacity = '1.0'
             document.getElementsByClassName('popup')[0].style.visibility = 'hidden'
+            
         }
         function uploadAudio(){
             document.getElementsByTagName('header')[0].style.opacity = '1.0'
