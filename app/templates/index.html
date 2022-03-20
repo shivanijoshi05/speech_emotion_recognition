@@ -77,27 +77,34 @@ Speech Emotion Recognition
             <div class="row">
                 <div class="col-lg-4">
                     <div class="left-content">
-                        <div class="inner-content">
-                            <h4 class="app-name">Speech Emotion Recognition</h4>
-                            <h6>TEST YOUR SPEECH</h6>
-                            <div class="main-white-button scroll-to-section">
-                                <button name="main-upload-btn" onclick="openPopUp()">Upload audio file</button>
-                            </div>
+                        <div class="inner-content">                            
+                            {% if emotion == "" %}
+                                <h4 class="app-name">Speech Emotion Recognition</h4>
+                                <h6>TEST YOUR SPEECH</h6>
+                                <div class="main-white-button scroll-to-section">
+                                    <button name="main-upload-btn" onclick="openPopUp()">Upload audio file</button>
+                                </div>
+                            {% else %}
+                                <div class = "audio-input">
+                                    <h5 class="app-name">Speech Emotion Recognition</h5>
+                                    <p>Your Audio :</p>
+                                    <audio controls>
+                                    <source src = "static/demo.wav" type="audio/wav">
+                                    <source src = "static/demo.wav" type="audio/mpeg">
+                                    </audio>
+                                    <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
+                                </div>
+                            {% endif %}
                         </div>
-                        <div class = "audio-input">
-                            <h4 class="app-name">Speech Emotion Recognition</h4>
-                            <p>Your Audio :</p>
-                            <audio controls>
-                            <source src="static/demo.wav" type="audio/wav">
-                            <source src="static/demo.mp3" type="audio/mpeg">
-                            </audio>
-                            <button name ="test-btn" class="testbtn" onclick='displayOutput()'>Test</button>
-                        </div>
+                        
+                       {% if emotion != "" %}
                         <div class="output">
-                            <h4 class="app-name">Speech Emotion Recognition</h4>
-                            <img src="static/images/happy.png">
-                            <h1>Happy</h1>
+                            <!--<h4 class="app-name">Speech Emotion Recognition</h4>-->
+                            <!--<img src="static/images/happy.png">-->
+                            <img src = "static/images/{{emotion}}.gif"  class ="emotion-img">
+                            <h1>{{emotion}}</h1>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -140,12 +147,14 @@ Speech Emotion Recognition
     <!-- ***** Main Banner Area End ***** -->
 
     <div class="popup">
-        <input id="input-b3" name="input-b3[]" type="file" class="file" multiple 
-         data-show-upload="false" data-show-caption="true" data-msg-placeholder="Select {files} for upload...">
-         <div class = "align-right-btn">
-            <button name="cancel" onclick="closePopUp()">Cancel</button>
-            <button name="upload" onclick="uploadAudio()">Upload</button>
-         </div>
+        <form action="" method="post" enctype="multipart/form-data" >
+            <input  type="file" name="file"></input>
+            <div class = "align-right-btn">
+                <input name="cancel" onclick="closePopUp()" type = 'submit' value = 'Cancel'></input>
+                <input name="upload" onclick="uploadAudio()" type = 'submit' value = 'Upload'></input>
+            </div>
+        </form>
+        
          
     </div>
 
@@ -353,6 +362,7 @@ Speech Emotion Recognition
             document.getElementsByTagName('header')[0].style.opacity = '1.0'
             document.getElementsByClassName('img-slider')[0].style.opacity = '1.0'
             document.getElementsByClassName('popup')[0].style.visibility = 'hidden'
+            
         }
         function uploadAudio(){
             document.getElementsByTagName('header')[0].style.opacity = '1.0'

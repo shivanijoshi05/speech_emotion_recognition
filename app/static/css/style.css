@@ -579,6 +579,7 @@ banner
 .app-name {
   font-family: 'Dancing Script', cursive;
   color: #fff;
+  margin-top: 20px;
   font-size: 50px;
   font-weight: 700;
 }
@@ -590,8 +591,13 @@ banner
   color: #fff;
   letter-spacing: 3px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
-
+#top .left-content .emotion-img{
+  margin-top: 20px;
+  height:60px;
+  width:60px;
+}
 #top .left-content .main-white-button  {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -788,7 +794,8 @@ pop up
 Output
 ---------------------------------------------
 */
-.audio-input{
+
+.inner-content .audio-input{
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -796,16 +803,15 @@ Output
   text-align: center;
   align-self: center;
   vertical-align: auto;
-  visibility: hidden;
 }
-.audio-input p{
+ .audio-input p{
   margin-top: 20px;
   margin-bottom: 30px;
-  font-size: medium;
+  font-size: 30px;
   text-align: center;
   color: #fff;
 }
-.audio-input h6{
+ .audio-input h6{
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
@@ -813,7 +819,7 @@ Output
   letter-spacing: 3px;
   margin-top: 10px;
 }
-.testbtn{
+ .testbtn{
   font-size: 13px;
   color: #219F94;
   background-color: #fff;
@@ -823,7 +829,7 @@ Output
   transition: all .3s;
   margin-top: 20px;
 }
-.testbtn:hover {
+ .testbtn:hover {
   opacity: 0.9;
 }
 
@@ -846,6 +852,7 @@ output
 .output img{
   margin-top: 30px;
   margin-bottom: 30px;
+  
 }
 .left-content .output h1{
   font-size: 40px;
