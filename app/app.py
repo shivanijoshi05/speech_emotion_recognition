@@ -8,18 +8,6 @@ from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 
 app = Flask(__name__)
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> 090cc79ab415d29bf5649c2c1e10d7f8f7730955
-@app.route('/')
-@app.route('/home')
-=======
-=======
-
->>>>>>> a305e295ab2d637bc6c90cb6dac2d85f68f22f39
 
 @app.route('/',methods = ["GET","POST"])
 @app.route('/home', methods = ["GET","POST"])
