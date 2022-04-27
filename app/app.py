@@ -3,7 +3,7 @@ import librosa
 import librosa.display
 import numpy as np
 import matplotlib.pyplot as plt
-import tensorflow as tf
+import keras
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 
@@ -38,7 +38,7 @@ def predict_emotion(input_audio):
         librosa.display.specshow(spectrogram, y_axis='mel', fmax=20000, x_axis='time')
         plt.savefig(path)
         image = load_image(path)
-        new_model = tf.keras.models.load_model('app/static/models/vgg16_model.h5')
+        new_model = keras.models.load_model('app/static/models/vgg19_model.h5')
         result = new_model.predict(image)
         y_pred = int(np.argmax(result, axis=1))
         emotion = emotions[y_pred]
