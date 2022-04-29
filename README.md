@@ -1,6 +1,19 @@
 Speech Emotion Recognition -
 
-Speech Emotion Recognition (SER), is the act of attempting to recognize human emotion from their speech or voice. This is due to the fact that voice often reflects underlying emotion through tone and pitch. SER has received increasing interest all through current years and is used in audio surveillance, web-based E-learning, commercial applications, clinical studies, etc. A teacher can use SER to decide what subjects can be taught and in turn, will be able to develop strategies for managing emotions within the learning environment. That is why the learner’s emotional state should be considered in the classroom. In the speech emotion recognition study, the most important issue is the effective parallel use of the extraction of proper speech features and an appropriate classification engine. We will in our current work build a model using a classifier that will be able to recognize and classify emotion from sound files. We will initialize the classifier and train the model and finally calculate the accuracy of our model.
+SER basically recognizes the emotional aspects of human speech. Emotion detection and its analysis have vital importance in today's digital world of remote communication. This system will predict various human emotions from their speech. Here we will be using Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) dataset containing audio files that would help in training the model.
+
+Tools and Software used:
+Librosa
+HTML
+Keras
+VGG-19
+Flask
+
+We trained our model using VGG16 and VGG19 out of which, VGG19 gave higher accuracy for which 70 epochs were given for training. The training accuracy of this model was 92.14% and the validation accuracy was 85.62%. The overall accuracy obtained was 86%. 
+
+
+In this system, the model that we built is deployed on web application that we created with the help of Flask and HTML. The user can upload an audio file as an input to the website to which the model applies the algorithm and predicts the emotion of the input audio file as an output.
+Hence, this way our web application produces the output which recognizes the emotion from speech.
 
 Authors : 
 Dhruvi Dhapre, Khushi Kamat, Shivani Joshi, Khushbu Modi
