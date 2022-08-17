@@ -3,10 +3,10 @@ Speech Emotion Recognition -
 SER basically recognizes the emotional aspects of human speech. Emotion detection and its analysis have vital importance in today's digital world of remote communication. This system will predict various human emotions from their speech. Here we will be using Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) dataset containing audio files that would help in training the model.
 
 Tools and Software used:
-Librosa
-HTML
-Keras
-VGG-19
+Librosa, 
+HTML, 
+Keras, 
+VGG-19, 
 Flask
 
 We trained our model using VGG16 and VGG19 out of which, VGG19 gave higher accuracy for which 70 epochs were given for training. The training accuracy of this model was 92.14% and the validation accuracy was 85.62%. The overall accuracy obtained was 86%. 
